@@ -11,13 +11,13 @@ contract AlwaysEven {
             alwaysEvenNumber += inputNumber;
         }
 
-        // 此条件会打破必定为偶数的不变性
+        // this condition will break the invariant that the number is always even
 
         if (hiddenValue == 8) {
             alwaysEvenNumber = 3;
         }
-        // 我们在函数结束时将 hiddenValue 设置为 inputNumber
-        // 在有状态的场景中，此值将在下一次调用中记住
+        // we set hiddenValue to inputNumber at the end of the function
+        // in a stateful scenario, this value will be remembered in the next call
 
         hiddenValue = inputNumber;
     }
